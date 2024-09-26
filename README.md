@@ -1,7 +1,5 @@
 - 👋 Hi, I’m @Mrfredbear83
 - 🌱 I’m currently learning HTML and CSS
-
-- 📫 How to reach me ...
 - 😄 Pronouns: he/him
 
 
