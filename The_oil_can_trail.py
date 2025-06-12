@@ -103,6 +103,6 @@ if player["alive"]:
     print("You survived 10 days! Victory!")
     print("Thank you for playing this was a game made by: imakecode, I fully coded this entire game Thank you to Prof.Sir for supporting the idea ")
 else:
-    print(" You did not survive. Game Over.")
-    print("This has been a game by: imakecode)
+    print("You did not survive. Game Over.")
+    print("This has been a game by: imakecode")
 print("========================")
