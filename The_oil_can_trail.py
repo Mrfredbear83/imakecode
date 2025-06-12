@@ -1,5 +1,4 @@
 import random
-import time  # Added to control pacing between days
 
 # Player state
 player = {
@@ -30,14 +29,8 @@ def encounter_drone():
     print("2. Fight with railgun (uses 1 ammo)")
     print("3. Use coolant to run away")
     print("4. Throw scrap metal to distract")
-    
-    while True:
-        choice = input("Choose an action (1-4): ")
-        if choice in ["1", "2", "3", "4"]:
-            break
-        else:
-            print("Invalid choice. Please select 1, 2, 3, or 4.")
-    
+    choice = input("Choose an action (1-4): ")
+
     if choice == "1":
         player["battery"] -= 10
         print(" You hide and avoid detection. Battery drops by 10%.")
@@ -62,6 +55,9 @@ def encounter_drone():
         else:
             print(" No scrap to throw. You're done for.")
             player["alive"] = False
+    else:
+        print(" Uh oh... You hesitate and get caught.")
+        player["alive"] = False
 
 def found_scrap():
     gain = random.randint(1, 2)
@@ -96,10 +92,7 @@ while player["alive"] and player["day"] <= 10:
     show_status()
     event = random.choice(encounters)
     encounter_functions[event]()  # Run the encounter
-
     if player["alive"]:
-        print("\n...Preparing for next day...\n")
-        time.sleep(2)  # Pause for 2 seconds before next day
         player["day"] += 1
     else:
         break
@@ -108,8 +101,8 @@ while player["alive"] and player["day"] <= 10:
 print("\n========================")
 if player["alive"]:
     print("You survived 10 days! Victory!")
-    print("Thank you for playing! This was a game made by: imakecode. I fully coded this entire game. Thank you to Prof.Sir for supporting the idea.")
+    print("Thank you for playing this was a game made by: imakecode, I fully coded this entire game Thank you to Prof.Sir for supporting the idea ")
 else:
-    print("You did not survive. Game Over.")
-    print("This has been a game by: imakecode")
+    print(" You did not survive. Game Over.")
+    print("This has been a game by: imakecode)
 print("========================")
