@@ -1,4 +1,5 @@
 import random
+import time  # Added to control pacing between days
 
 # Player state
 player = {
@@ -22,14 +23,17 @@ encounters = [
 def show_status():
     print(f"\nDay {player['day']} Status:")
     print(f"Battery: {player['battery']}% | Coolant: {player['coolant']} | Ammo: {player['ammo']} | Scrap: {player['scrap']}")
-
+    
 def encounter_drone():
     print("\n A Disassembly Drone is approaching!")
-    print("1. Hide behind a car (safe, drains battery)")
-    print("2. Fight with railgun (uses 1 ammo)")
-    print("3. Use coolant to run away")
-    print("4. Throw scrap metal to distract")
+    print("1. Hide behind a car (safe, drains battery)", flush=True)  # line 28
+    print("2. Fight with railgun (uses 1 ammo)", flush=True)         # line 30
+    print("3. Use coolant to run away", flush=True)                   # line 31
+    print("4. Throw scrap metal to distract", flush=True)
     choice = input("Choose an action (1-4): ")
+    
+    # rest of the function unchanged...
+
 
     if choice == "1":
         player["battery"] -= 10
@@ -92,7 +96,10 @@ while player["alive"] and player["day"] <= 10:
     show_status()
     event = random.choice(encounters)
     encounter_functions[event]()  # Run the encounter
+
     if player["alive"]:
+        print("\n...Preparing for next day...\n")
+        time.sleep(2)  # Pause for 2 seconds before next day
         player["day"] += 1
     else:
         break
