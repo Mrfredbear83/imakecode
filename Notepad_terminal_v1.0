@@ -1,0 +1,19 @@
+import os
+
+print("==== TERMINAL NOTEPAD v1.0 ====")
+print("Type your text below. When you're ready to save, type 'SAVE' on a new line.\n")
+
+lines = []
+
+while True:
+    line = input(" > ")
+    if line.strip().upper() == "SAVE":
+        break
+    lines.append(line)
+
+filename = input("\nEnter filename to save as (without .txt): ") + ".txt"
+
+with open(filename, "w") as f:
+    f.write("\n".join(lines))
+
+print(f"\nFile saved as: {filename}")
