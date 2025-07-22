@@ -53,9 +53,9 @@ def open_file_explorer():
         messagebox.showinfo("File Chosen", f"You opened:\n{file}")
 
 # Desktop icons
-tk.Button(root, text="📝 Notepad", command=open_notepad).place(x=50, y=50)
-tk.Button(root, text="ℹ️ Info", command=show_info).place(x=50, y=120)
-tk.Button(root, text="📁 Files", command=open_file_explorer).place(x=50, y=190)
+tk.Button(root, text=" Notepad", command=open_notepad).place(x=50, y=50)
+tk.Button(root, text=" Info", command=show_info).place(x=50, y=120)
+tk.Button(root, text=" Files", command=open_file_explorer).place(x=50, y=190)
 
 # Allow window drag
 root.bind("<Button-1>", start_move)
