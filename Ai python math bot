@@ -1,0 +1,35 @@
+def math_bot():
+    print("MathBot: Hi! I can do adding, subtracting, and multiplying Type 'bye' to leave.\n")
+
+    while True:
+        user_input = input("You: ").lower()
+
+        if "bye" in user_input:
+            print("MathBot: Bye-bye! Come back if you need more math help!")
+            break
+
+        words = user_input.split()
+
+        try:
+            # Try to extract numbers and operation
+            for i in range(len(words)):
+                if words[i].isdigit() and i+2 < len(words) and words[i+2].isdigit():
+                    num1 = int(words[i])
+                    num2 = int(words[i+2])
+                    operator = words[i+1]
+
+                    if operator in ["+", "add", "plus"]:
+                        print(f"MathBot: {num1} + {num2} = {num1 + num2}")
+                    elif operator in ["-", "subtract", "minus"]:
+                        print(f"MathBot: {num1} - {num2} = {num1 - num2}")
+                    elif operator in ["*", "x", "multiply", "times"]:
+                        print(f"MathBot: {num1} * {num2} = {num1 * num2}")
+                    else:
+                        print("MathBot: I don't know that operation")
+                    break
+            else:
+                print("MathBot: Please give me a simple math problem like '3 + 5' or '7 times 2'.")
+        except Exception as e:
+            print("MathBot: Uh oh... I got confused. Try again!")
+
+math_bot()
