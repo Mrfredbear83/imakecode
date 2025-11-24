@@ -1,4 +1,4 @@
 - 👋 Hi, I’m @imakecode
-- 🌱 I’m currently learning R , Python , and SVG 
+- 🌱 I’m currently learning C#, Python , and Kotlin
 - 😄 Pronouns: he/him
 - 
