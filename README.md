@@ -1,4 +1,1 @@
-- 👋 Hi, I’m @imakecode
-- 🌱 I’m currently learning C#, Python , and Kotlin
-- 😄 Pronouns: he/him
-- 
+This is teh best github repo ever
